@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets | WeMotix</title>
+    <link rel="stylesheet" href="buy-tickets.css">
+    <link rel="icon" type="image/png" href="icon_favicon.png">
+    <script src="buy-tickets.js" defer></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="wemotix_logo.png" alt="WeMotix Logo" class="weMotix-text">
+                    <img src="brand_logo.png" alt="Brand Logo" class="brand-logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="cinemas.html">Cinemas</a></li>
+                    <li><a href="employees.html">Employees</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Movie Showtime Listings -->
+    <main class="tickets-container">
+        <h2>Showtimes</h2>
+        <div class="movie-list">
+            <!-- Movie Items -->
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/1pHDWnXmK7Y">
+                <img src="captain.jpg" alt="Captain America: Brave New World" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="PG.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">Captain America: Brave New World</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">12:30 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">05:30 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/uhUht6vAsMY">
+                <img src="superman.png" alt="Superman" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="PG.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">Superman</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">02:15 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">07:30 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/jan5CFWs9ic">
+                <img src="jw.png" alt="Jurassic World: Rebirth" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="PG.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">Jurassic World: Rebirth</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">01:30 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">04:30 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">07:30 PM</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/22w7z_lT6YM">
+                <img src="dragon.png" alt="How to Train Your Dragon" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="PG.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">How to Train Your Dragon</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">02:15 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">07:30 PM</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/AzMo-FgRp64">
+                <img src="4.png" alt="The Fantastic Four: First Steps" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="PG.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">The Fantastic Four: First Steps</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">03:15 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">06:30 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/sCp1ZlNf3GY">
+                <img src="untold.jpeg" alt="Untold" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="R13.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">Untold</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">03:00 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">08:00 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/l7i-jRD8Xq8">
+                <img src="balota.png" alt="Balota" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="R13.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">Balota</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">12:00 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">05:00 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/PKJvximzBKw">
+                <img src="care.png" alt="The Caretakers" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="R16.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">The Caretakers</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">02:15 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">07:30 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/uRBHJPic9zc">
+                <img src="hla.png" alt="Hello, Love, Again" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="PG.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">Hello, Love, Again</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">01:00 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">04:00 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">07:00 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/WnwcaqaXkBU">
+                <img src="disapear.png" alt="My Love Will Make You Disappear" class="movie-poster">
+                <div class="movie-details">
+                    <div class="title-rating">
+                        <img src="R16.png" alt="Rating" class="movie-rating">
+                        <h3 class="movie-title">My Love Will Make You Disappear</h3>
+                    </div>
+                    <p class="movie-date"></p>
+                    <div class="showtimes">
+                        <button class="time-btn" onclick="goToSelectTickets()">04:00 PM</button>
+                        <button class="time-btn" onclick="goToSelectTickets()">07:00 PM</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add 8 more movies with unique posters, ratings, and times -->
+        </div>
+    </main>
+
+    <!-- Trailer Popup -->
+    <div class="trailer-popup" id="trailerPopup">
+        <div class="trailer-content">
+            <span class="close-btn" onclick="closeTrailer()">&times;</span>
+            <iframe id="trailerFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="fb.svg" alt="Facebook"></a>
+            <a href="#"><img src="ig.svg" alt="Instagram"></a>
+            <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="yt.svg" alt="YouTube"></a>
+            <a href="#"><img src="tiktok.svg" alt="TikTok"></a>
+        </div>
+        <div class="footer-links">
+            <a href="terms.html">Terms and Conditions</a> |
+            <a href="privacy.html">Privacy Notice</a>
+        </div>
+        <p>&copy; 2025 WeMotix. All rights reserved.</p>
+    </footer>
+     
+    <script src="buy-tickets.js"></script>
+</body>
+</html>

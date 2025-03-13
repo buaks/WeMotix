@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeMotix - Movies</title>
+    <link rel="stylesheet" href="movies.css">
+    <link rel="icon" type="image/png" href="icon_favicon.png">
+</head>
+<body class="movies-page">
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="wemotix_logo.png" alt="WeMotix Logo" class="weMotix-text">
+                    <img src="brand_logo.png" alt="Brand Logo" class="brand-logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html" class="active">Movies</a></li>
+                    <li><a href="cinemas.html">Cinemas</a></li>
+                    <li><a href="employees.html">Employees</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Movies Section -->
+    <main>
+        <h2 class="now-showing-title">Now Showing</h2>
+
+        <section class="movie-grid">
+            <div class="movie-card" onclick="openPopup('movie1')">
+                <img src="captain.jpg" alt="Movie 1" class="movie-poster">
+                <h3 class="movie-title">Captain America: Brave New World</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie2')">
+                <img src="superman.png" alt="Movie 2" class="movie-poster">
+                <h3 class="movie-title">Superman</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie3')">
+                <img src="jw.png" alt="Movie 3" class="movie-poster">
+                <h3 class="movie-title">Jurassic World: Rebirth</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie4')">
+                <img src="dragon.png" alt="Movie 4" class="movie-poster">
+                <h3 class="movie-title">How to Train Your Dragon</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie5')">
+                <img src="4.png" alt="Movie 5" class="movie-poster">
+                <h3 class="movie-title">The Fantastic Four: First Steps</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie6')">
+                <img src="untold.jpeg" alt="Movie 6" class="movie-poster">
+                <h3 class="movie-title">Untold</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie7')">
+                <img src="balota.png" alt="Movie 7" class="movie-poster">
+                <h3 class="movie-title">Balota</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie8')">
+                <img src="care.png" alt="Movie 8" class="movie-poster">
+                <h3 class="movie-title">The Caretakers</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie9')">
+                <img src="hla.png" alt="Movie 9" class="movie-poster">
+                <h3 class="movie-title">Hello, Love, Again</h3>
+            </div>
+            <div class="movie-card" onclick="openPopup('movie10')">
+                <img src="disapear.png" alt="Movie 10" class="movie-poster">
+                <h3 class="movie-title">My Love Will Make You Disappear</h3>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup Container -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <iframe id="movie-trailer" class="popup-video" src="" frameborder="0" allowfullscreen></iframe>
+            <div class="popup-details">
+                <h3 id="popup-title"></h3>
+                <p id="popup-description"></p>
+                <a href="buy-tickets.html" class="buy-ticket">Buy Tickets</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer>
+    <div class="social-icons">
+        <a href="#"><img src="fb.svg" alt="Facebook"></a>
+        <a href="#"><img src="ig.svg" alt="Instagram"></a>
+        <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="yt.svg" alt="YouTube"></a>
+        <a href="#"><img src="tiktok.svg" alt="TikTok"></a>
+    </div>
+    </div>
+    <div class="footer-links">
+        <a href="terms.html">Terms and Conditions</a> |
+        <a href="privacy.html">Privacy Notice</a>
+    </div>
+    <p>&copy; 2025 WeMotix. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

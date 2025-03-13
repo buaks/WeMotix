@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeMotix - Movie Ticketing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon_favicon.png">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="wemotix_logo.png" alt="WeMotix Logo" class="weMotix-text">
+                    <img src="brand_logo.png" alt="Brand Logo" class="brand-logo">
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="cinemas.html">Cinemas</a></li>
+                    <li><a href="employees.html">Employees</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Tabs -->
+    <main>
+        <section class="tabs">
+            <button id="nowShowingBtn" class="active">Now Showing</button>
+            <button id="comingSoonBtn">Coming Soon</button>
+        </section>
+
+        <!-- Movie Listings -->
+        <section id="moviesSection">
+            <!-- Now Showing Movies -->
+            <div id="now-showing-grid-container" class="grid-container">
+                <div class="movie-card"><img src="movie1.jpg" alt=""><h3>Movie 1</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie2.jpg" alt=""><h3>Movie 2</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie3.jpg" alt=""><h3>Movie 3</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie4.jpg" alt=""><h3>Movie 4</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie5.jpg" alt=""><h3>Movie 5</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie6.jpg" alt=""><h3>Movie 6</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie7.jpg" alt=""><h3>Movie 7</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie8.jpg" alt=""><h3>Movie 8</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie9.jpg" alt=""><h3>Movie 9</h3><button class="buy-ticket">Buy Tickets</button></div>
+                <div class="movie-card"><img src="movie10.jpg" alt=""><h3>Movie 10</h3><button class="buy-ticket">Buy Tickets</button></div>
+            </div>
+
+            <!-- Coming Soon Movies (Without View More Details Button) -->
+            <div id="coming-soon-grid-container" class="grid-container" style="display: none;">
+                <div class="movie-card">
+                    <img src="coming1.jpg" alt="">
+                    <h3>Coming Soon 1</h3>
+                </div>
+                <div class="movie-card">
+                    <img src="coming2.jpg" alt="">
+                    <h3>Coming Soon 2</h3>
+                </div>
+                <div class="movie-card">
+                    <img src="coming3.jpg" alt="">
+                    <h3>Coming Soon 3</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- View All Movies Button -->
+        <div class="view-all-container">
+            <a href="movies.html" class="view-all-btn">View All Movies</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="fb.svg" alt="Facebook"></a>
+            <a href="#"><img src="ig.svg" alt="Instagram"></a>
+            <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="yt.svg" alt="YouTube"></a>
+            <a href="#"><img src="tiktok.svg" alt="TikTok"></a>
+        </div>
+        <div class="footer-links">
+            <a href="terms.html">Terms and Conditions</a> |
+            <a href="privacy.html">Privacy Notice</a>
+        </div>
+        <p>&copy; 2025 WeMotix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

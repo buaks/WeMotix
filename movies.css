@@ -1,0 +1,225 @@
+/* General Styles */
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background: #1f1f1f;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the two images */
+}
+
+/* WeMotix Text Image */
+.weMotix-text {
+    height: 40px; /* Adjust as needed */
+}
+
+/* Brand Logo */
+.brand-logo {
+    width: 70px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #0057b3; /* Blue Hover */
+    border-radius: 5px;
+}
+
+.nav-links .active {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Hero Section Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px; /* Added more space */
+}
+
+.tabs button {
+    font-size: 20px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tabs button.active {
+    background: orange; /* Yellow Active Tab */
+    border: none;
+}
+
+
+/* Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 80px; /* Increased margin */
+    padding: 30px;
+    margin: 0 150px; /* Added side margins */
+    margin-bottom: 25px;
+}
+
+/* Movie Cards */
+.movie-card {
+    background: #222;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 85%;
+    border-radius: 5px;
+}
+
+.movie-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.08); /* Enlarges when hovered */
+}
+
+.movie-card:not(:hover) {
+    transform: scale(1); /* Shrinks back smoothly */
+}
+
+
+/* Dark Mode Popup with Increased Height */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 450px;
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Popup Content - Side Layout */
+.popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%; /* Match the pop-up height */
+}
+
+
+/* Popup Video */
+.popup-video {
+    width: 50%;
+    height: 460px;
+    border-radius: 10px;
+}
+
+/* Popup Details (Title & Description) */
+.popup-details {
+    width: 50%;
+}
+
+/* "Buy Tickets" Button in Popup */
+.popup .buy-ticket {
+    background: #0057b3;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+    width: fit-content;
+}
+
+
+
+.now-showing-title {
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+
+
+
+/* Movies Page - Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f1f1f;
+}
+
+/* Social Media Icons */
+.social-icons img {
+    width: 40px; /* Uniform size */
+    margin: 10px 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer Links */
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.footer-links a:hover {
+    color: #ffd700; /* Yellow Hover */
+}

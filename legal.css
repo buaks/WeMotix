@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+    background: #1f1f1f;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the two images */
+}
+
+/* WeMotix Text Image */
+.weMotix-text {
+    height: 40px; /* Adjust as needed */
+}
+
+/* Brand Logo */
+.brand-logo {
+    width: 70px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #0057b3; /* Blue Hover */
+    border-radius: 5px;
+}
+
+.nav-links .active {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Centered Box for Terms and Privacy */
+.legal-container {
+    background: #2a2a2a; /* Gray Box */
+    padding: 30px;
+    border-radius: 10px; /* Smooth Edges */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    width: min(800px, 90%);
+    text-align: left;
+    margin: 50px auto;
+}
+
+/* Section Titles */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff; /* Yellow Accent */
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f1f1f;
+    margin-top: auto;
+}
+
+/* Social Media Icons */
+.social-icons img {
+    width: 40px;
+    margin: 10px;
+}
+
+/* Footer Links */
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.footer-links a:hover {
+    color: #ffd700; /* Yellow Hover */
+}
