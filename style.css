@@ -167,3 +167,31 @@ footer {
 .footer-links a:hover {
     color: #ffd700;
 }
+
+@media screen and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 card per row on mobile */
+        padding: 10px;
+    }
+
+    .movie-card img {
+        width: 100%; /* Make posters fully responsive */
+        height: auto;
+    }
+
+    .movie-card {
+        text-align: center;
+    }
+}
