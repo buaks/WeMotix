@@ -41,6 +41,7 @@ nav {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin-top: 15px;
 }
 
 .nav-links li a {
@@ -168,30 +169,73 @@ footer {
     color: #ffd700;
 }
 
-@media screen and (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on tablets */
-    }
-}
 
-@media screen and (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller tablets */
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* General Styles */
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
-}
 
-@media screen and (max-width: 480px) {
+    /* Navigation Bar */
+    .nav-container {
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 5px;
+    }
+
+    .nav-links li a {
+        padding: 8px 10px; /* Adjust padding for smaller buttons */
+    }
+
+    /* Hero Section Tabs */
+    .tabs {
+        flex-direction: column; /* Stack tabs vertically */
+        gap: 5px;
+    }
+
+    .tabs button {
+        font-size: 16px; /* Reduce button size */
+        padding: 10px 15px;
+    }
+
+    /* Movie Grid */
     .grid-container {
-        grid-template-columns: 1fr; /* 1 card per row on mobile */
-        padding: 10px;
+        grid-template-columns: repeat(2, 1fr); /* Show 2 columns instead of 5 */
+        gap: 15px; /* Reduce gap between items */
+        margin: 0 20px; /* Reduce side margins */
+    }
+
+    /* Movie Cards */
+    .movie-card {
+        padding: 10px; /* Reduce padding */
     }
 
     .movie-card img {
-        width: 100%; /* Make posters fully responsive */
-        height: auto;
+        height: auto; /* Allow image to resize proportionally */
     }
 
-    .movie-card {
-        text-align: center;
+    /* Buy Tickets Button */
+    .buy-ticket {
+        font-size: 14px; /* Reduce button font size */
+        padding: 8px; /* Adjust padding */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px; /* Reduce footer padding */
+    }
+
+    .social-icons img {
+        width: 30px; /* Reduce icon size */
+        margin: 5px; /* Adjust spacing */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Reduce font size */
     }
 }

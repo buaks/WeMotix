@@ -60,6 +60,7 @@ nav {
 .nav-links .active {
     color: #ffd700;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 /* Centered Box for Terms and Privacy */
@@ -115,4 +116,69 @@ footer {
 
 .footer-links a:hover {
     color: #ffd700; /* Yellow Hover */
+}
+
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* General Styles */
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    /* Navigation Bar */
+    .nav-container {
+        flex-direction: column; /* Stack logo and links vertically */
+        align-items: center; /* Center align the content */
+        gap: 15px; /* Add spacing between logo and links */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Add spacing between links */
+        text-align: center; /* Center align the links */
+    }
+
+    .nav-links li a {
+        padding: 10px 20px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Adjust font size for readability */
+        width: 100%; /* Make links take full width */
+        display: block; /* Ensure links are block elements */
+    }
+
+    /* Legal Container */
+    .legal-container {
+        width: 100%; /* Use full width for smaller screens */
+        padding: 20px; /* Adjust padding */
+        margin: 20px auto; /* Add spacing around the container */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust title size */
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust subtitle size */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph font size */
+        line-height: 1.5; /* Adjust line height for readability */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px; /* Reduce footer padding */
+    }
+
+    .social-icons img {
+        width: 30px; /* Reduce icon size */
+        margin: 5px; /* Adjust spacing */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Reduce font size */
+    }
 }

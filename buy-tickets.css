@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/*Navigation Bar */
+/* Navigation Bar */
 nav {
     background: #1f1f1f;
     padding: 15px 0;
@@ -91,12 +91,12 @@ h2 {
 
 /* Movie Poster */
 .movie-poster {
-    width: 125px;
+    width: 100px; /* Adjusted to make the poster smaller */
     cursor: pointer;
     border-radius: 5px;
     margin-right: 20px;
     height: 100%;
-
+    object-fit: cover; /* Ensures the image fits nicely */
 }
 
 /* Movie Details */
@@ -132,6 +132,8 @@ h2 {
 /* Showtimes */
 .showtimes {
     margin-top: 8px;
+    display: flex;
+    gap: 10px; /* Adds spacing between buttons */
 }
 
 .time-btn {
@@ -147,6 +149,7 @@ h2 {
 
 .time-btn:hover {
     background: #ffd700;
+    color: black;
 }
 
 /* Trailer Popup */
@@ -202,8 +205,113 @@ footer {
     color: white;
     text-decoration: none;
     margin: 10px;
-}
+}    
 
 .footer-links a:hover {
     color: #ffd700;
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* General Styles */
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    /* Navigation Bar */
+    .nav-container {
+        flex-direction: column; /* Stack logo and links vertically */
+        align-items: center; /* Center align the content */
+        gap: 15px; /* Add spacing between logo and links */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Add spacing between links */
+        text-align: center; /* Center align the links */
+    }
+
+    .nav-links li a {
+        padding: 10px 20px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Adjust font size for readability */
+        width: 100%; /* Make links take full width */
+        display: block; /* Ensure links are block elements */
+    }
+
+    /* Tickets Container */
+    .tickets-container {
+        width: 100%; /* Use full width for smaller screens */
+        margin: 20px auto; /* Adjust margins */
+    }
+
+    h2 {
+        font-size: 22px; /* Adjust heading size */
+        text-align: center; /* Center align the heading */
+    }
+
+    /* Movie Cards */
+    .movie-card {
+        flex-direction: column; /* Stack poster and details vertically */
+        height: auto; /* Adjust height */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .movie-poster {
+        width: 100%; /* Full width for poster */
+        height: auto; /* Adjust height proportionally */
+        margin-bottom: 15px; /* Add spacing below the poster */
+    }
+
+    .movie-details {
+        text-align: center; /* Center align the details */
+    }
+
+    .movie-title {
+        font-size: 16px; /* Adjust title size */
+    }
+
+    .movie-date {
+        font-size: 14px; /* Adjust date size */
+    }
+
+    .showtimes {
+        justify-content: center; /* Center align the showtimes */
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        gap: 10px; /* Add spacing between buttons */
+    }
+
+    .time-btn {
+        font-size: 14px; /* Adjust button size */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    /* Trailer Popup */
+    .trailer-popup {
+        padding: 20px; /* Add padding for smaller screens */
+    }
+
+    .trailer-content {
+        width: 100%; /* Full width for trailer content */
+        max-width: 100%; /* Ensure it doesn't exceed screen width */
+    }
+
+    iframe {
+        height: 200px; /* Adjust iframe height */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px; /* Reduce footer padding */
+    }
+
+    .social-icons img {
+        width: 30px; /* Reduce icon size */
+        margin: 5px; /* Adjust spacing */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Reduce font size */
+    }
 }

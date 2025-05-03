@@ -18,6 +18,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    margin-top: 15px;
 }
 
 .logo {
@@ -143,4 +144,80 @@ footer {
 
 .footer-links a:hover {
     color: #ffd700;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* General Styles */
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 0 10px; /* Add padding for smaller screens */
+    }
+
+    /* Navigation Bar */
+    .nav-container {
+        flex-direction: column; /* Stack logo and links vertically */
+        align-items: center; /* Center align the content */
+        gap: 15px; /* Add spacing between logo and links */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Add spacing between links */
+        text-align: center; /* Center align the links */
+    }
+
+    .nav-links li a {
+        padding: 10px 20px; /* Increase padding for better touch targets */
+        font-size: 16px; /* Adjust font size for readability */
+        width: 100%; /* Make links take full width */
+        display: block; /* Ensure links are block elements */
+    }
+
+    /* Cinemas Section */
+    .cinema-container {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 20px auto; /* Add spacing around the container */
+    }
+
+    .cinema-list {
+        gap: 15px; /* Reduce gap between cinema cards */
+    }
+
+    .cinema-card {
+        flex-direction: column; /* Stack logo and details vertically */
+        text-align: center; /* Center align the content */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .cinema-logo {
+        width: 100px; /* Reduce logo size */
+        margin: 0 auto 10px; /* Center logo and add spacing below */
+    }
+
+    .cinema-details {
+        text-align: center; /* Center align the details */
+    }
+
+    .cinema-name {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .see-playing {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px; /* Reduce footer padding */
+    }
+
+    .social-icons img {
+        width: 30px; /* Reduce icon size */
+        margin: 5px; /* Adjust spacing */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Reduce font size */
+    }
 }
