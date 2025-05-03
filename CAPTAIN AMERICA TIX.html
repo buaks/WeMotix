@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeMotix | Select Tickets</title>
+    <link rel="stylesheet" href="TIX.css">
+    <link rel="icon" type="image/png" href="icon_favicon.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="wemotix_logo.png" alt="WeMotix Logo" class="weMotix-text">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="cinemas.html">Cinemas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Ticket Selection Section -->
+    <main class="select-tickets-container">
+        <h2>Select Tickets</h2>
+        <div class="ticket-selection">
+            <div class="movie-info">
+                <img src="captain.jpg" alt="Movie Poster" class="movie-poster">
+                <div class="movie-details">
+                    <h3 class="movie-title">Captain America: Brave New World</h3>
+                    <p class="movie-time">Selected Time: None</p> <!-- Placeholder for selected time -->
+                    <p>Director's Club 1</p>
+                </div>
+            </div>
+            <div class="time-options">
+                <h3>Select a Time</h3>
+                <button class="time-btn" onclick="selectTime('12:30 PM')">12:30 PM</button>
+                <button class="time-btn" onclick="selectTime('5:30 PM')">5:30 PM</button>
+            </div>
+            <div class="ticket-options">
+                <h3>Standard</h3>
+                <div class="ticket-row">
+                    <span>DC POPCORN X DRINKS*</span>
+                    <span>₱600.00</span>
+                    <div class="quantity">
+                        <button onclick="updateQuantity(-1)">-</button>
+                        <input type="number" id="ticket-quantity" value="1" min="1" readonly>
+                        <button onclick="updateQuantity(1)">+</button>
+                    </div>
+                    <span id="total-amount">₱600.00</span>
+                </div>
+                <div class="photo-upload-section">
+                    <label for="payment-photo">Upload Payment Confirmation</label>
+                    <input type="file" id="payment-photo" accept="image/*">
+                </div>
+                <div class="payment-mode">
+                    <p><strong>Mode of Payment:</strong></p>
+                    <p>GCash: <strong>1234567890</strong></p>
+                </div>
+                <button class="next-btn" onclick="goToSeatSelection()">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="fb.svg" alt="Facebook"></a>
+            <a href="#"><img src="ig.svg" alt="Instagram"></a>
+            <a href="#"><img src="twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="yt.svg" alt="YouTube"></a>
+            <a href="#"><img src="tiktok.svg" alt="TikTok"></a>
+        </div>
+        <div class="footer-links">
+            <a href="terms.html">Terms and Conditions</a> |
+            <a href="privacy.html">Privacy Notice</a>
+        </div>
+        <p>&copy; 2025 WeMotix. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to update the selected time dynamically
+        function selectTime(time) {
+            document.querySelector(".movie-time").textContent = `Selected Time: ${time}`;
+        }
+    
+        // Function to update the ticket quantity and total amount
+        function updateQuantity(change) {
+            const ticketPrice = 600; // Price per ticket
+            const quantityInput = document.getElementById("ticket-quantity");
+            const totalAmount = document.getElementById("total-amount");
+    
+            // Update the quantity
+            let quantity = parseInt(quantityInput.value) + change;
+            if (quantity < 1) quantity = 1; // Ensure quantity is at least 1
+            if (quantity > 10) quantity = 10; // Ensure quantity does not exceed 10
+            quantityInput.value = quantity;
+    
+            // Update the total amount
+            totalAmount.textContent = `₱${(quantity * ticketPrice).toFixed(2)}`;
+        }
+
+        // Function to navigate to seat selection
+        function goToSeatSelection() {
+    const quantity = document.getElementById("ticket-quantity").value;
+    const selectedTime = document.querySelector(".movie-time").textContent.replace("Selected Time: ", "").trim();
+    const movieName = document.querySelector(".movie-title").textContent.trim();
+    const paymentPhoto = document.getElementById("payment-photo").files[0];
+
+    if (selectedTime === "None") {
+        alert("Please select a time before proceeding.");
+        return;
+    }
+
+    if (!paymentPhoto) {
+        alert("Please upload your payment confirmation photo.");
+        return;
+    }
+
+    // Convert photo to Base64
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const base64Photo = event.target.result;
+
+        // Store the photo in localStorage
+        localStorage.setItem("paymentPhoto", base64Photo);
+
+        // Redirect to seat selection with other parameters
+        location.href = `select-seats.html?quantity=${quantity}&time=${encodeURIComponent(selectedTime)}&movie=${encodeURIComponent(movieName)}`;
+    };
+    reader.readAsDataURL(paymentPhoto); // Read the photo file as Base64
+}
+    </script>
+</body>
+</html>
