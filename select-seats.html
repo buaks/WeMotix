@@ -21,7 +21,10 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="movies.html">Movies</a></li>
                     <li><a href="cinemas.html">Cinemas</a></li>
+                    <li><a href="purchasehistory.html">History</a></li>
                 </ul>
+
+                 <button id="logout-btn">Log Out</button>
             </div>
         </nav>
     </header>
@@ -127,9 +130,7 @@ if (paymentPhoto) {
     imgElement.alt = "Payment Confirmation";
 
     // Append the image to a specific container
-    const photoContainer = document.createElement("div");
-    photoContainer.classList.add("payment-photo-container");
-    photoContainer.appendChild(imgElement);
+  
 
     // Add the container to the body or a specific section
     document.body.appendChild(photoContainer);

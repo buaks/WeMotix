@@ -13,7 +13,10 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="movies.html">Movies</a></li>
                     <li><a href="cinemas.html">Cinemas</a></li>
+                    <li><a href="purchasehistory.html">History</a></li>
                 </ul>
+
+                 <button id="logout-btn">Log Out</button>
             </div>
         </nav>
 
@@ -39,6 +42,7 @@
         <div class="ticket">
             <h2 class="ticket-title">Booking Summary</h2>
             <div class="ticket-details">
+                <h3><strong>!!AFTER CONFIRMING PLEASE GO TO COUNTER FOR PAYMENT!!</strong>
                 <p><strong>Movie:</strong> <span id="movie-name"></span></p>
                 <p><strong>Number of Tickets:</strong> <span id="ticket-count"></span></p>
                 <p><strong>Time:</strong> <span id="selected-time"></span></p>
@@ -58,74 +62,72 @@
     </main>
 
     <script>
-        // Get ticket quantity, movie name, time, total price, and selected seats from URL query parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const ticketQuantity = parseInt(urlParams.get("quantity")) || 0;
-        const selectedTime = urlParams.get("time") || "N/A";
-        const movieName = urlParams.get("movie") || "Unknown Movie";
-        const totalPrice = parseInt(urlParams.get("total")) || 0;
-        const seats = urlParams.get("seats") ? urlParams.get("seats").split(",") : [];
-
-        // Display the summary
-        document.getElementById("movie-name").textContent = movieName;
-        document.getElementById("ticket-count").textContent = ticketQuantity;
-        document.getElementById("selected-time").textContent = selectedTime;
-        document.getElementById("total-price").textContent = `₱${totalPrice.toFixed(2)}`;
-        const selectedSeatsList = document.getElementById("selected-seats");
-        seats.forEach(seat => {
-            const li = document.createElement("li");
-            li.textContent = seat;
-            selectedSeatsList.appendChild(li);
-        });
-
-        // Confirm booking function
-        function confirmBooking() {
-    const emailInput = document.getElementById("email").value.trim();
-
-    // Validate email
-    if (!emailInput) {
-        alert("Please enter your email address.");
-        return;
+    function savePurchaseHistory(movie, time, quantity, total) {
+        const purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
+        const newPurchase = { movie, time, quantity, total };
+        purchaseHistory.push(newPurchase);
+        localStorage.setItem("purchaseHistory", JSON.stringify(purchaseHistory));
     }
 
-    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-    if (!gmailRegex.test(emailInput)) {
-        alert("Please enter a valid Gmail address.");
-        return;
+    const urlParams = new URLSearchParams(window.location.search);
+    const ticketQuantity = parseInt(urlParams.get("quantity")) || 0;
+    const selectedTime = urlParams.get("time") || "N/A";
+    const movieName = urlParams.get("movie") || "Unknown Movie";
+    const totalPrice = parseInt(urlParams.get("total")) || 0;
+    const seats = urlParams.get("seats") ? urlParams.get("seats").split(",") : [];
+
+    document.getElementById("movie-name").textContent = movieName;
+    document.getElementById("ticket-count").textContent = ticketQuantity;
+    document.getElementById("selected-time").textContent = selectedTime;
+    document.getElementById("total-price").textContent = `₱${totalPrice.toFixed(2)}`;
+    const selectedSeatsList = document.getElementById("selected-seats");
+    seats.forEach(seat => {
+        const li = document.createElement("li");
+        li.textContent = seat;
+        selectedSeatsList.appendChild(li);
+    });
+
+    function confirmBooking() {
+        const emailInput = document.getElementById("email").value.trim();
+
+        if (!emailInput) {
+            alert("Please enter your email address.");
+            return;
+        }
+
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        if (!gmailRegex.test(emailInput)) {
+            alert("Please enter a valid Gmail address.");
+            return;
+        }
+
+        const emailData = {
+            to_email: emailInput,
+            movie_name: movieName,
+            ticket_quantity: ticketQuantity,
+            selected_time: selectedTime,
+            total_price: `₱${totalPrice.toFixed(2)}`,
+            selected_seats: seats.join(", ")
+        };
+
+        savePurchaseHistory(movieName, selectedTime, ticketQuantity, totalPrice);
+
+        emailjs.send("service_bw7zqaj", "template_7ta27o8", emailData)
+            .then(response => {
+                console.log("Email sent successfully:", response);
+                alert("Your booking has been confirmed and the ticket has been emailed to you!");
+                location.href = "index.html";
+            })
+            .catch(error => {
+                console.error("EmailJS Error:", error);
+                alert("Failed to send the email. Please try again.");
+            });
     }
 
-    // Prepare email data
-    const emailData = {
-        to_email: emailInput,
-        movie_name: movieName,
-        ticket_quantity: ticketQuantity,
-        selected_time: selectedTime,
-        total_price: `₱${totalPrice.toFixed(2)}`,
-        selected_seats: seats.join(", ")
-    };
-
-    // Send email using EmailJS
-    emailjs.send("service_bw7zqaj", "template_7ta27o8", emailData)
-        .then(response => {
-            console.log("Email sent successfully:", response);
-            alert("Your booking has been confirmed and the ticket has been emailed to you!");
-            location.href = "index.html"; // Redirect to homepage or another page
-        })
-        .catch(error => {
-            console.error("EmailJS Error:", error);
-            alert("Failed to send the email. Please try again.");
-        });
-
-        }
-        reader.readAsDataURL(paymentPhoto); // Read the photo file as Base64
-
-        // Go back function
-        function goBack() {
-            history.back(); // Go back to the previous page
-        }
-
-        
-    </script>
+    function goBack() {
+        history.back();
+    }
+</script>
 
       <!-- Footer -->
       <footer>

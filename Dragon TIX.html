@@ -21,7 +21,10 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="movies.html">Movies</a></li>
                     <li><a href="cinemas.html">Cinemas</a></li>
+                    <li><a href="purchasehistory.html">History</a></li>
                 </ul>
+
+                 <button id="logout-btn">Log Out</button>
             </div>
         </nav>
     </header>
@@ -56,14 +59,6 @@
                     </div>
                     <span id="total-amount">₱600.00</span>
                 </div>
-                <div class="photo-upload-section">
-                    <label for="payment-photo"><strong>Upload Payment Confirmation:</strong></label>
-                    <input type="file" id="payment-photo" accept="image/*">
-                </div>
-                <div class="payment-mode">
-                    <p><strong>Mode of Payment:</strong></p>
-                    <p>GCash: <strong>1234567890</strong></p>
-                </div>
                 <button class="next-btn" onclick="goToSeatSelection()">Next</button>
             </div>
         </div>
@@ -85,58 +80,44 @@
         <p>&copy; 2025 WeMotix. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Function to update the selected time dynamically
-        function selectTime(time) {
-            document.querySelector(".movie-time").textContent = `Selected Time: ${time}`;
-        }
-    
-        // Function to update the ticket quantity and total amount
-        function updateQuantity(change) {
-            const ticketPrice = 600; // Price per ticket
-            const quantityInput = document.getElementById("ticket-quantity");
-            const totalAmount = document.getElementById("total-amount");
-    
-            // Update the quantity
-            let quantity = parseInt(quantityInput.value) + change;
-            if (quantity < 1) quantity = 1; // Ensure quantity is at least 1
-            if (quantity > 10) quantity = 10; // Ensure quantity does not exceed 10
-            quantityInput.value = quantity;
-    
-            // Update the total amount
-            totalAmount.textContent = `₱${(quantity * ticketPrice).toFixed(2)}`;
-        }
-
-        // Function to navigate to seat selection
-        function goToSeatSelection() {
-    const quantity = document.getElementById("ticket-quantity").value;
-    const selectedTime = document.querySelector(".movie-time").textContent.replace("Selected Time: ", "").trim();
-    const movieName = document.querySelector(".movie-title").textContent.trim();
-    const paymentPhoto = document.getElementById("payment-photo").files[0];
-
-    if (selectedTime === "None") {
-        alert("Please select a time before proceeding.");
-        return;
+<script>
+         // Function to update the selected time dynamically
+    function selectTime(time) {
+        document.querySelector(".movie-time").textContent = `Selected Time: ${time}`;
     }
 
-    if (!paymentPhoto) {
-        alert("Please upload your payment confirmation photo.");
-        return;
+    // Function to update the ticket quantity and total amount
+    function updateQuantity(change) {
+        const ticketPrice = 600; // Price per ticket
+        const quantityInput = document.getElementById("ticket-quantity");
+        const totalAmount = document.getElementById("total-amount");
+
+        // Update the quantity
+        let quantity = parseInt(quantityInput.value) + change;
+        if (quantity < 1) quantity = 1; // Ensure quantity is at least 1
+        if (quantity > 10) quantity = 10; // Ensure quantity does not exceed 10
+        quantityInput.value = quantity;
+
+        // Update the total amount
+        totalAmount.textContent = `₱${(quantity * ticketPrice).toFixed(2)}`;
     }
 
-    // Convert photo to Base64
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const base64Photo = event.target.result;
+    // Function to navigate to seat selection
+    function goToSeatSelection() {
+        const quantity = document.getElementById("ticket-quantity").value;
+        const selectedTime = document.querySelector(".movie-time").textContent.replace("Selected Time: ", "").trim();
+        const movieName = document.querySelector(".movie-title").textContent.trim();
 
-        // Store the photo in localStorage
-        localStorage.setItem("paymentPhoto", base64Photo);
+        if (selectedTime === "None") {
+            alert("Please select a time before proceeding.");
+            return;
+        }
 
-        // Redirect to seat selection with other parameters
-        location.href = `select-seats.html?quantity=${quantity}&time=${encodeURIComponent(selectedTime)}&movie=${encodeURIComponent(movieName)}`;
-    };
-    reader.readAsDataURL(paymentPhoto); // Read the photo file as Base64
-}
+        // Redirect to seat selection with query parameters
+        const url = `select-seats.html?quantity=${quantity}&time=${encodeURIComponent(selectedTime)}&movie=${encodeURIComponent(movieName)}`;
+        console.log("Redirecting to:", url); // Debugging log
+        location.href = url;
+    }
     </script>
 </body>
 </html>

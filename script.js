@@ -85,6 +85,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.getElementById("logout-btn").addEventListener("click", function() {
+    // Optional: If you want to clear any session data or perform any cleanup
+    // sessionStorage.clear();
+    // localStorage.clear();
+
+    // Redirect the user to the index.html page
+    location.href = "login.html"; // This will navigate to the index page
+});
+
 // Popup Functionality (Kept for Now Showing, Removed for Coming Soon)
 document.addEventListener("DOMContentLoaded", function () {
     const movieData = {
