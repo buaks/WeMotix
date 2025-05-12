@@ -172,3 +172,4 @@ document.addEventListener("DOMContentLoaded", function () {
     window.openPopup = openPopup;
     window.closePopup = closePopup;
 });
+
