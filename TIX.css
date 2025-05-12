@@ -543,3 +543,136 @@ footer {
 }
 }
 
+@media (max-width: 1366px) {
+    /* General Styles */
+    html, body {
+        font-size: 11px; /* Reduce font size for compact layout */
+        padding: 0; /* Remove extra padding */
+        margin: 0; /* Remove default margin */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        height: 100%; /* Ensure the body takes up the full height */
+        display: flex;
+        flex-direction: column; /* Stack header, main, and footer vertically */
+    }
+
+    /* Main Content */
+    main {
+        flex: 1; /* Allow the main content to grow and push the footer down */
+        overflow: hidden; /* Prevent main content overflow */
+    }
+
+    /* Select Tickets Container */
+    .select-tickets-container {
+        background: #1f1f1f; /* Dark background for the box */
+        color: white; /* Text color */
+        padding: 20px; /* Reduce inner spacing */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        width: 90%; /* Adjust width for better alignment */
+        max-width: 1500px; /* Limit the maximum width */
+        margin: 10px auto; /* Center the box horizontally and add vertical spacing */
+        text-align: left; /* Align text to the left */
+        height: calc(100vh - 150px); /* Adjust height to fit within the screen */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    /* Movie Info */
+    .movie-info {
+        display: flex;
+        flex-direction: row; /* Keep poster and details side by side */
+        align-items: flex-start; /* Align content to the top */
+        gap: 10px; /* Reduce spacing between poster and details */
+        margin-bottom: 10px; /* Reduce bottom margin */
+    }
+
+    /* Movie Poster */
+    .movie-poster {
+        width: 90px; /* Reduce poster width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px; /* Rounded corners for the poster */
+        object-fit: cover; /* Ensure the image fits properly */
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle shadow */
+    }
+
+    /* Movie Details */
+    .movie-details {
+        flex: 1; /* Allow details to take up remaining space */
+        text-align: left; /* Align text to the left */
+    }
+
+    .movie-title {
+        font-size: 13px; /* Reduce title size */
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .movie-time {
+        font-size: 11px; /* Reduce time size */
+        margin-bottom: 3px;
+        color: #ccc; /* Subtle text color */
+    }
+
+    /* Time Options */
+    .time-options {
+        margin-top: 5px;
+        display: flex;
+        justify-content: flex-start; /* Align buttons to the left */
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+
+    .time-btn {
+        font-size: 11px; /* Reduce button size */
+        padding: 4px 6px; /* Adjust padding */
+        border-radius: 4px;
+    }
+
+    /* Ticket Options */
+    .ticket-options {
+        margin-top: 8px; /* Reduce margin */
+    }
+
+    .ticket-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px; /* Reduce padding */
+        background: #2a2a2a; /* Slightly lighter background for rows */
+        border-radius: 5px;
+        margin-bottom: 5px; /* Reduce spacing between rows */
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .quantity input {
+        width: 30px; /* Further reduce input width */
+        text-align: center;
+    }
+
+    /* Payment Section */
+    .payment-mode {
+        margin-top: 5px; /* Reduce margin */
+        font-size: 11px; /* Reduce font size */
+        text-align: left; /* Align text to the left */
+    }
+
+    .payment-mode p {
+        margin: 2px 0; /* Reduce spacing */
+    }
+
+    .payment-mode strong {
+        font-size: 11px; /* Reduce font size */
+    }
+
+    /* Next Button */
+    .next-btn {
+        width: 7%; /* Full width for better usability */
+        text-align: center;
+        padding: 5px 8px; /* Further reduce padding */
+        font-size: 11px; /* Reduce font size */
+        margin-top: 8px; /* Reduce margin */
+    }
+}
