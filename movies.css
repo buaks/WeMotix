@@ -284,6 +284,7 @@ footer {
 }
 
 
+
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
     /* General Styles */
@@ -291,84 +292,69 @@ footer {
         font-size: 14px; /* Adjust font size for smaller screens */
         padding: 0 10px; /* Add padding for smaller screens */
     }
-
     /* Navigation Bar */
     .nav-container {
         flex-direction: column; /* Stack logo and links vertically */
         align-items: center; /* Center align the content */
         gap: 15px; /* Add spacing between logo and links */
     }
-
     .nav-links {
         flex-direction: column; /* Stack links vertically */
         gap: 10px; /* Add spacing between links */
         text-align: center; /* Center align the links */
     }
-
     .nav-links li a {
         padding: 10px 20px; /* Increase padding for better touch targets */
         font-size: 16px; /* Adjust font size for readability */
         width: 100%; /* Make links take full width */
         display: block; /* Ensure links are block elements */
     }
-
     /* Hero Section Tabs */
     .tabs {
         flex-direction: column; /* Stack tabs vertically */
         gap: 10px; /* Add spacing between tabs */
     }
-
     .tabs button {
         font-size: 16px; /* Reduce button size */
         padding: 10px 15px; /* Adjust padding */
     }
-
     /* Movie Grid */
     .movie-grid {
         grid-template-columns: repeat(2, 1fr); /* Show 2 columns instead of 4 */
         gap: 20px; /* Reduce gap between items */
         margin: 0 10px; /* Reduce side margins */
     }
-
     /* Movie Cards */
     .movie-card {
         padding: 10px; /* Reduce padding */
     }
-
     .movie-card img {
         height: auto; /* Allow image to resize proportionally */
     }
-
     /* Popup */
     .popup {
         width: 90%; /* Adjust popup width for smaller screens */
         height: auto; /* Allow height to adjust dynamically */
     }
-
     .popup-content {
         flex-direction: column; /* Stack video and details vertically */
         gap: 20px; /* Add spacing between sections */
     }
-
     .popup-video {
         width: 100%; /* Full width for video */
         height: auto; /* Adjust height proportionally */
     }
-
     .popup-details {
         width: 100%; /* Full width for details */
     }
-
     /* Footer */
     footer {
         padding: 15px; /* Reduce footer padding */
     }
-
     .social-icons img {
         width: 30px; /* Reduce icon size */
         margin: 5px; /* Adjust spacing */
     }
-
     .footer-links a {
         font-size: 14px; /* Reduce font size */
     }
@@ -382,10 +368,12 @@ footer {
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 #logout-btn:hover {
     background-color: #c82333;
     transform: scale(1.05);
 }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 16d25d3e49f5490cf9be29668e608664e20e07e6
