@@ -15,14 +15,24 @@ const auth = getAuth(app);
 
 document.getElementById("signup-form").addEventListener("submit", function(e) {
   e.preventDefault();
+
   const email = document.getElementById("signup-email").value;
   const password = document.getElementById("signup-password").value;
+  const confirmPassword = document.getElementById("signup-confirm-password").value;
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      window.location.href = "login.html";
-    })
-    .catch((error) => {
-      document.getElementById("signup-error").textContent = error.message;
-    });
-});
+  if (password !== confirmPassword) {
+    document.getElementById("signup-error").textContent = "Passwords do not match.";
+    return;
+  }
+
+ createUserWithEmailAndPassword(auth, email, password)
+  .then(() => {
+    localStorage.setItem("savedEmail", email); // Save email to localStorage
+    window.location.href = "login.html"; // Redirect
+  })
+  .catch((error) => {
+    document.getElementById("signup-error").textContent = error.message;
+  });
+
+}
+);  

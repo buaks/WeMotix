@@ -12,11 +12,33 @@
     <h2>Login</h2>
     <form id="login-form">
       <input type="email" id="login-email" placeholder="Email" required />
-      <input type="password" id="login-password" placeholder="Password" required />
+
+      <div style="position: relative;">
+        <!-- ✅ Fixed wrong ID from signup-password to login-password -->
+        <input type="password" id="login-password" placeholder="Password" required />
+        <span class="toggle-password" onclick="togglePassword('login-password')">👁️</span>
+      </div>
+
       <button type="submit">Login</button>
       <div class="error-message" id="login-error"></div>
     </form>
     <p>Don't have an account? <a href="new-landing.html">Sign up here</a></p>
   </div>
+
+  <!-- ✅ Show Password + Auto-fill Script -->
+  <script>
+    function togglePassword(fieldId) {
+      const input = document.getElementById(fieldId);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedEmail = localStorage.getItem("savedEmail");
+      if (savedEmail) {
+        document.getElementById("login-email").value = savedEmail;
+        localStorage.removeItem("savedEmail"); // Remove after filling once
+      }
+    });
+  </script>
 </body>
 </html>
